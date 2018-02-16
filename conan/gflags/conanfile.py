@@ -22,7 +22,13 @@ class GflagsConan(ConanFile):
 	# conan_basic_setup()''')
 
     def build(self):
+	self.run("export PATH=$PATH:$PWD/../cmake/build/bin")
         cmake = CMake(self)
+	
+	# Not working?
+	#cmake.definitions["CONAN_CMAKE_FIND_ROOT_PATH"] = "../cmake/build"
+	
+	cmake.verbose = True
         cmake.configure(source_folder="gflags")
         cmake.build()
 
