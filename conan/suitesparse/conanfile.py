@@ -1,7 +1,7 @@
 from conans import ConanFile, tools
 
 
-class GflagsConan(ConanFile):
+class SuitesparseConan(ConanFile):
     name = "suitesparse"
     version = "5.1.0"
     license = "Multi"
